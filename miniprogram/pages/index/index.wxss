@@ -1,0 +1,122 @@
+/**index.wxss**/
+page {
+  height: 100vh;
+  display: flex;
+  flex-direction: column;
+  background-color: #f5f5f5;
+}
+
+.container {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  padding: 20rpx;
+  box-sizing: border-box;
+  width: 100%;
+}
+
+.game-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  width: 100%;
+  padding: 10rpx;
+  margin-bottom: 20rpx;
+}
+
+.mine-counter {
+  font-size: 32rpx;
+  font-weight: bold;
+  color: #e74c3c;
+  background-color: #fff;
+  padding: 10rpx 20rpx;
+  border-radius: 10rpx;
+  box-shadow: 0 2rpx 5rpx rgba(0, 0, 0, 0.1);
+}
+
+.restart-button {
+  font-size: 28rpx;
+  background-color: #3498db;
+  color: white;
+  padding: 10rpx 20rpx;
+  border-radius: 10rpx;
+}
+
+.game-board {
+  background-color: #ddd;
+  border: 4rpx solid #bbb;
+  border-radius: 10rpx;
+  padding: 10rpx;
+  box-shadow: 0 4rpx 8rpx rgba(0, 0, 0, 0.2);
+}
+
+.board-row {
+  display: flex;
+  flex-direction: row;
+}
+
+.cell {
+  width: 70rpx;
+  height: 70rpx;
+  margin: 2rpx;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background-color: #aaa;
+  border-radius: 6rpx;
+  box-shadow: inset 0 0 0 2rpx #999;
+  font-weight: bold;
+  font-size: 36rpx;
+}
+
+.revealed {
+  background-color: #e0e0e0;
+  box-shadow: inset 0 0 0 1rpx #ccc;
+}
+
+.flagged {
+  background-color: #f39c12;
+}
+
+.mine {
+  font-size: 40rpx;
+}
+
+.flag {
+  font-size: 40rpx;
+}
+
+.number {
+  font-weight: bold;
+}
+
+.number-1 { color: #2980b9; }
+.number-2 { color: #27ae60; }
+.number-3 { color: #c0392b; }
+.number-4 { color: #8e44ad; }
+.number-5 { color: #d35400; }
+.number-6 { color: #16a085; }
+.number-7 { color: #2c3e50; }
+.number-8 { color: #7f8c8d; }
+
+.game-instructions {
+  margin-top: 30rpx;
+  background-color: white;
+  padding: 20rpx;
+  border-radius: 10rpx;
+  width: 90%;
+  box-shadow: 0 2rpx 5rpx rgba(0, 0, 0, 0.1);
+}
+
+.game-instructions text {
+  display: block;
+  font-size: 28rpx;
+  line-height: 1.6;
+  color: #333;
+}
+
+.instruction-title {
+  font-weight: bold;
+  margin-bottom: 10rpx;
+  font-size: 32rpx !important;
+}

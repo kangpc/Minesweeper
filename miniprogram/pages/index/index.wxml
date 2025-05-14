@@ -1,0 +1,43 @@
+<!--index.wxml-->
+<view class="container">
+  <view class="game-header">
+    <view class="mine-counter">剩余地雷: {{remainingMines}}</view>
+    <button class="restart-button" bindtap="restartGame">重新开始</button>
+  </view>
+
+  <view class="game-board">
+    <block wx:for="{{gameBoard}}" wx:for-item="row" wx:for-index="rowIndex" wx:key="rowIndex">
+      <view class="board-row">
+        <block wx:for="{{row}}" wx:for-item="cell" wx:for-index="colIndex" wx:key="colIndex">
+          <view 
+            class="cell {{revealed[rowIndex][colIndex] ? 'revealed' : ''}} {{flagged[rowIndex][colIndex] ? 'flagged' : ''}}"
+            data-row="{{rowIndex}}" 
+            data-col="{{colIndex}}" 
+            bindtap="onCellTap" 
+            bindlongpress="onCellLongTap"
+          >
+            <block wx:if="{{revealed[rowIndex][colIndex]}}">
+              <block wx:if="{{cell === -1}}">
+                <text class="mine">💣</text>
+              </block>
+              <block wx:elif="{{cell > 0}}">
+                <text class="number number-{{cell}}">{{cell}}</text>
+              </block>
+            </block>
+            <block wx:elif="{{flagged[rowIndex][colIndex]}}">
+              <text class="flag">🚩</text>
+            </block>
+          </view>
+        </block>
+      </view>
+    </block>
+  </view>
+
+  <view class="game-instructions">
+    <text class="instruction-title">游戏说明：</text>
+    <text>1. 点击格子揭开内容</text>
+    <text>2. 长按格子标记地雷</text>
+    <text>3. 数字表示周围8个格子中的地雷数量</text>
+    <text>4. 揭开所有非地雷格子即可获胜</text>
+  </view>
+</view>
